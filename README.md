@@ -274,3 +274,240 @@ export default function Viewer() {
 ```
 
 ---
+
+
+
+
+---
+বুঝেছি 👍
+তুমি এই জিনিসটা **GitHub repo তে publish করার মতো structure** চাও, মানে full **Python + Node.js + React** project ready-to-run হয়ে থাকবে।
+
+আমি একটা clean repo structure সাজিয়ে দিচ্ছি 👇
+
+---
+
+# 📂 Repo Structure (GitHub Ready)
+
+```
+turf-bestframe-ai/
+│
+├── backend/                # Node.js (Express + Socket.io)
+│   ├── package.json
+│   ├── server.js
+│   └── README.md
+│
+├── ai-service/             # Python (YOLOv8 + FastAPI/Requests)
+│   ├── main.py
+│   ├── requirements.txt
+│   └── README.md
+│
+├── frontend/               # React App (Best Frame Viewer)
+│   ├── package.json
+│   ├── src/
+│   │   └── BestFrameViewer.jsx
+│   └── README.md
+│
+└── README.md               # Main repo instructions
+```
+
+---
+
+## 🔹 1) `ai-service/main.py` (Python – YOLO detect + send best frame)
+
+```python
+import cv2, base64, requests
+import numpy as np
+from ultralytics import YOLO
+
+# Load YOLOv8
+model = YOLO("yolov8n.pt")
+SPORTS_BALL_ID = 32
+
+# Camera RTSP URLs
+cams = [
+    cv2.VideoCapture("rtsp://camera1"),
+    cv2.VideoCapture("rtsp://camera2"),
+    cv2.VideoCapture("rtsp://camera3"),
+    cv2.VideoCapture("rtsp://camera4"),
+]
+
+def send_best_frame(frame):
+    _, buffer = cv2.imencode(".jpg", frame)
+    jpg_as_text = base64.b64encode(buffer).decode("utf-8")
+    requests.post("http://localhost:5000/ai-frame", json={"frame": jpg_as_text})
+
+while True:
+    best_frame = None
+    best_area = 0
+
+    for cam in cams:
+        ret, frame = cam.read()
+        if not ret:
+            continue
+
+        results = model.predict(frame, conf=0.5, verbose=False)
+        for box in results[0].boxes:
+            if int(box.cls[0].item()) == SPORTS_BALL_ID:
+                x1,y1,x2,y2 = map(int, box.xyxy[0].cpu().numpy())
+                area = (x2-x1)*(y2-y1)
+                if area > best_area:
+                    best_area = area
+                    best_frame = frame
+
+    if best_frame is not None:
+        send_best_frame(best_frame)
+```
+
+📌 **requirements.txt**
+
+```
+ultralytics
+opencv-python
+numpy
+requests
+```
+
+Run:
+
+```bash
+pip install -r requirements.txt
+python main.py
+```
+
+---
+
+## 🔹 2) `backend/server.js` (Node.js – socket server)
+
+```js
+import express from "express";
+import { Server } from "socket.io";
+import http from "http";
+
+const app = express();
+app.use(express.json({ limit: "50mb" }));
+
+const server = http.createServer(app);
+const io = new Server(server, { cors: { origin: "*" } });
+
+app.post("/ai-frame", (req, res) => {
+  const { frame } = req.body;
+  io.emit("bestFrame", frame); // send to all clients
+  res.json({ status: "ok" });
+});
+
+io.on("connection", (socket) => {
+  console.log("✅ Client connected");
+});
+
+server.listen(5000, () => console.log("🚀 Node server running on 5000"));
+```
+
+📌 **package.json**
+
+```json
+{
+  "name": "backend",
+  "type": "module",
+  "dependencies": {
+    "express": "^4.18.2",
+    "socket.io": "^4.7.5"
+  }
+}
+```
+
+Run:
+
+```bash
+npm install
+node server.js
+```
+
+---
+
+## 🔹 3) `frontend/src/BestFrameViewer.jsx` (React client)
+
+```jsx
+import { useEffect, useState } from "react";
+import io from "socket.io-client";
+
+const socket = io("http://localhost:5000");
+
+export default function BestFrameViewer() {
+  const [frame, setFrame] = useState(null);
+
+  useEffect(() => {
+    socket.on("bestFrame", (data) => {
+      setFrame("data:image/jpeg;base64," + data);
+    });
+    return () => socket.disconnect();
+  }, []);
+
+  return (
+    <div>
+      <h2>⚽ Live Best Frame</h2>
+      {frame && <img src={frame} alt="Best Frame" style={{ width: "640px" }} />}
+    </div>
+  );
+}
+```
+
+📌 Install deps:
+
+```bash
+npx create-react-app frontend
+cd frontend
+npm install socket.io-client
+npm start
+```
+
+---
+
+## 🔹 4) Root `README.md` (GitHub Main Instructions)
+
+````md
+# ⚽ Turf Best Frame AI
+
+Multi-camera AI system that detects football position from 4 IP cameras and streams the **best frame** (closest ball) to clients.
+
+---
+
+## 📂 Structure
+- `ai-service/` → Python (YOLOv8 model, ball detection)
+- `backend/` → Node.js (Express + Socket.io server)
+- `frontend/` → React (Client viewer)
+
+---
+
+## 🚀 Run Locally
+
+### 1) Backend
+```bash
+cd backend
+npm install
+node server.js
+````
+
+### 2) AI Service
+
+```bash
+cd ai-service
+pip install -r requirements.txt
+python main.py
+```
+
+### 3) Frontend
+
+```bash
+cd frontend
+npm start
+```
+
+---
+
+## 🔗 Workflow
+
+```
+4 Cameras → Python AI (YOLOv8) → Best Frame (Base64)
+     → Node.js (Socket.io) → React Client
+```
+
