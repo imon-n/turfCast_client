@@ -1,8 +1,7 @@
 
 # TurfCast BD
 
-TurfCast is an **AI-powered multi-camera sports streaming system**. It automatically detects the ball, picks the **best viewing angle**, and streams it live to audiences.  
-Extra features include **highlight generation, recorded match playback, live streaming (YouTube/Facebook), and slot booking for turf management**.  
+TurfCast is an **AI-powered multi-camera sports streaming system**. It automatically detects the ball, picks the **best viewing angle**, and streams it live to audiences.
 
 ---
 
