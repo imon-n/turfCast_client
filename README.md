@@ -10,7 +10,7 @@ It detects **sports ball** from multiple video feeds → selects the **best came
 ```
 ---
 ## 📂 Project Structure
-
+```bash
 turf-bestframe-ai/
 │
 ├── ai-service/             # Python (YOLOv8)
@@ -36,10 +36,10 @@ turf-bestframe-ai/
 │   └── README.md
 │
 └── README.md               # Main repo instructions
+````
 
 
-
- 🚀 Quick Start
+## 🚀 Quick Start
 
 ### 1️⃣ Run AI Service (Python + YOLOv8)
 ### 🚀 Quick Start
