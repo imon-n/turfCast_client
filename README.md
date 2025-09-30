@@ -1,17 +1,5 @@
-Got it ✅
-তুমি চাইছো আমি পুরোটা আবার লিখি কিন্তু এবার **GitHub README best practices** মেনে — অর্থাৎ
 
-* একদম পরিষ্কার structure
-* proper markdown heading hierarchy (`#`, `##`, `###`)
-* fenced code blocks ঠিকমতো
-* কোন open fence যেন unmatched না থাকে
-* সুন্দরভাবে সাজানো (badges/tech stack/icons optional but readable)
-
-আমি তোমাকে root + submodules (ai-service, backend, frontend) এর জন্য final **GitHub standard style README.md** লিখে দিলাম।
-
----
-
-# 📌 Root README.md (`turf-bestframe-ai/README.md`)
+# 📌 (`turf-bestframe-ai/README.md`)
 
 ```markdown
 # 🏟️ TurfCast - BestFrame AI
@@ -273,12 +261,3 @@ export default function BestFrameViewer() {
 ```
 
 ---
-
-```
-
----
-
-✅ সবগুলো এখন proper markdown format এ clean + GitHub-friendly.  
-
-চাও তুমি চাইলে আমি এগুলোর সাথে **Badges (build, Python, Node, React)** আর **screenshots/gif preview section** যোগ করে আরও প্রফেশনাল GitHub profile-ready বানিয়ে দিতে পারি। চাই?
-```
