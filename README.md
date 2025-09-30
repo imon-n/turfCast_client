@@ -1,6 +1,3 @@
-
----
-
 # 🎯 Windows Ready Full Setup (CCTV + Best Frame)
 
 ## 🛠️ Overview
