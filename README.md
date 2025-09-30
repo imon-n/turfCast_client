@@ -279,11 +279,8 @@ export default function Viewer() {
 
 
 ---
-বুঝেছি 👍
-তুমি এই জিনিসটা **GitHub repo তে publish করার মতো structure** চাও, মানে full **Python + Node.js + React** project ready-to-run হয়ে থাকবে।
-
-আমি একটা clean repo structure সাজিয়ে দিচ্ছি 👇
-
+-----------------------------
+# Finally
 ---
 
 # 📂 Repo Structure (GitHub Ready)
