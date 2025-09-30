@@ -1,3 +1,13 @@
+Got it ✅
+তুমি চাইছো আমি পুরোটা আবার লিখি কিন্তু এবার **GitHub README best practices** মেনে — অর্থাৎ
+
+* একদম পরিষ্কার structure
+* proper markdown heading hierarchy (`#`, `##`, `###`)
+* fenced code blocks ঠিকমতো
+* কোন open fence যেন unmatched না থাকে
+* সুন্দরভাবে সাজানো (badges/tech stack/icons optional but readable)
+
+আমি তোমাকে root + submodules (ai-service, backend, frontend) এর জন্য final **GitHub standard style README.md** লিখে দিলাম।
 
 ---
 
