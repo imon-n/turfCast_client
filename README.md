@@ -1,17 +1,10 @@
-Got it ✅
-তুমি চাইছো আমি পুরোটা আবার লিখি কিন্তু এবার **GitHub README best practices** মেনে — অর্থাৎ
-
-* একদম পরিষ্কার structure
-* proper markdown heading hierarchy (`#`, `##`, `###`)
-* fenced code blocks ঠিকমতো
-* কোন open fence যেন unmatched না থাকে
-* সুন্দরভাবে সাজানো (badges/tech stack/icons optional but readable)
-
-আমি তোমাকে root + submodules (ai-service, backend, frontend) এর জন্য final **GitHub standard style README.md** লিখে দিলাম।
+বুঝেছি 👍
+তুমি বলছো তোমার README এর project structure part আর পুরো markdown formatting **ঠিকঠাক GitHub এ সুন্দরভাবে render হচ্ছে না**।
+আমি সেটা ঠিক করে দিচ্ছি — proper fenced code block, indentation, এবং পুরো **final polished version** সহ।
 
 ---
 
-# 📌 Root README.md (`turf-bestframe-ai/README.md`)
+# 🏟️ TurfCast - BestFrame AI (Final `README.md`)
 
 ```markdown
 # 🏟️ TurfCast - BestFrame AI
@@ -115,170 +108,10 @@ Cameras/Video → Python AI (YOLOv8) → Best Frame → Node.js Server → React
 
 👨‍💻 Developed with ❤️ by **Tanif & Team**
 
-````
-
----
-
-# 📌 AI Service README.md (`ai-service/README.md`)
-
-```markdown
-# 🤖 AI Service (YOLOv8 + OpenCV)
-
-This module runs YOLOv8 to detect **sports ball** from multiple camera/video feeds and selects the **best frame** (largest ball detected).  
-The best frame is sent to the Node.js backend via **Socket.IO client**.
-
----
-
-## ⚙️ Setup
-
-```bash
-cd ai-service
-python -m venv venv
-source venv/bin/activate    # (Windows: venv\Scripts\activate)
-pip install -r requirements.txt
-````
-
----
-
-## 📦 requirements.txt
-
-```
-ultralytics
-opencv-python
-numpy
-python-socketio[client]
 ```
 
 ---
 
-## ▶️ Run
-
-```bash
-python main.py
-```
-
----
-
-## 📂 Files
-
-* `main.py` – Main detection + Socket.IO client
-* `weights/yolov8n.pt` – YOLO model
-* `utils/coco.txt` – COCO labels
-* `inference/videos/` – Sample input videos
-
----
-
-````
-
----
-
-# 📌 Backend README.md (`backend/README.md`)
-
-```markdown
-# 🌐 Backend (Node.js + Socket.IO)
-
-Handles real-time communication between **Python AI Service** and **React frontend** using **Socket.IO**.
-
----
-
-## ⚙️ Setup
-
-```bash
-cd backend
-npm install
-````
-
----
-
-## ▶️ Run
-
-```bash
-node server.js
-```
-
-Server runs at: [http://localhost:5000](http://localhost:5000)
-
----
-
-## 📂 Files
-
-* `server.js` – Express + Socket.IO server
-* `package.json` – Dependencies
-
----
-
-## 🔄 Events
-
-* **`bestFrame`** → Received from Python AI
-* **`bestFrame`** → Broadcasted to React clients
-
----
-
-````
-
----
-
-# 📌 Frontend README.md (`frontend/README.md`)
-
-```markdown
-# 💻 Frontend (React Client)
-
-React app that subscribes to **Socket.IO server** and displays the **best frame** in real time.
-
----
-
-## ⚙️ Setup
-
-```bash
-cd frontend
-npm install
-npm run dev   # (Vite) 
-# or 
-npm start     # (CRA)
-````
-
----
-
-## 📂 Files
-
-* `src/BestFrameViewer.jsx` – Main component to display live frame
-* `package.json` – React + Socket.IO client dependencies
-
----
-
-## 📸 Example Component
-
-```jsx
-import { useEffect, useState } from "react";
-import { io } from "socket.io-client";
-
-const socket = io("http://localhost:5000");
-
-export default function BestFrameViewer() {
-  const [frame, setFrame] = useState("");
-
-  useEffect(() => {
-    socket.on("bestFrame", (data) => {
-      setFrame("data:image/jpeg;base64," + data);
-    });
-  }, []);
-
-  return (
-    <div>
-      <h2>🏆 Best Frame Live</h2>
-      {frame && <img src={frame} alt="Best Frame" />}
-    </div>
-  );
-}
-```
-
----
-
-```
-
----
-
-✅ সবগুলো এখন proper markdown format এ clean + GitHub-friendly.  
-
-চাও তুমি চাইলে আমি এগুলোর সাথে **Badges (build, Python, Node, React)** আর **screenshots/gif preview section** যোগ করে আরও প্রফেশনাল GitHub profile-ready বানিয়ে দিতে পারি। চাই?
+👉 এখন structure block (`project tree`) fenced code block এর মধ্যে, তাই GitHub এ সুন্দরভাবে render হবে।  
+চাও আমি তোমার জন্য extra **badges (Python, Node, React, License)** আর **screenshot section** যোগ করে GitHub profile আরও professional বানিয়ে দিই?
 ```
