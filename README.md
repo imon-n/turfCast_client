@@ -1,8 +1,3 @@
-বুঝেছি 👍
-তুমি বলছো তোমার README এর project structure part আর পুরো markdown formatting **ঠিকঠাক GitHub এ সুন্দরভাবে render হচ্ছে না**।
-আমি সেটা ঠিক করে দিচ্ছি — proper fenced code block, indentation, এবং পুরো **final polished version** সহ।
-
----
 
 # 🏟️ TurfCast - BestFrame AI (Final `README.md`)
 
