@@ -93,14 +93,3 @@ Cameras/Video → Python AI (YOLOv8) → Best Frame → Node.js Server → React
 * [ ] Cloud GPU deployment
 * [ ] Booking system + analytics
 
----
-
-👨‍💻 Developed with ❤️ by **Tanif & Team**
-
-```
-
----
-
-👉 এখন structure block (`project tree`) fenced code block এর মধ্যে, তাই GitHub এ সুন্দরভাবে render হবে।  
-চাও আমি তোমার জন্য extra **badges (Python, Node, React, License)** আর **screenshot section** যোগ করে GitHub profile আরও professional বানিয়ে দিই?
-```
