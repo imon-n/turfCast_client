@@ -73,7 +73,7 @@ Then open:
 ## 🔄 Data Flow
 
 ```
-Cameras/Video → Python AI (YOLOv8) → Best Frame → Node.js Server → React Client
+Cameras/Videos → AI (YOLOv8) → Best Frame → Node.js Server → React Client
 ```
 
 ---
