@@ -1,7 +1,7 @@
 
 # 🏟️ TurfCast - BestFrame AI 
 
-```markdown
+```bash
 
 Multi-camera **AI-powered best frame detection** system.  
 It detects **sports ball** from multiple video feeds → selects the **best camera view** → streams it to users in real time.
