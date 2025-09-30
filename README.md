@@ -1,4 +1,4 @@
-
+---
 # 🏟️ TurfCast - BestFrame AI (Final `README.md`)
 
 ```markdown
@@ -7,11 +7,9 @@
 Multi-camera **AI-powered best frame detection** system.  
 It detects **sports ball** from multiple video feeds → selects the **best camera view** → streams it to users in real time.
 
----
-
-## 📂 Project Structure
-
 ```
+---
+## 📂 Project Structure
 
 turf-bestframe-ai/
 │
@@ -66,14 +64,11 @@ node server.js
 cd frontend
 npm install
 npm run dev   # (Vite) 
-# or 
-npm start     # (CRA)
 ```
 
 Then open:
 
 * [http://localhost:5173](http://localhost:5173) (Vite)
-* [http://localhost:3000](http://localhost:3000) (CRA)
 
 ---
 
