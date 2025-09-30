@@ -37,13 +37,12 @@ turf-bestframe-ai/
 │
 └── README.md               # Main repo instructions
 
-````
 
----
 
-## 🚀 Quick Start
+ 🚀 Quick Start
 
 ### 1️⃣ Run AI Service (Python + YOLOv8)
+### 🚀 Quick Start
 ```bash
 cd ai-service
 pip install -r requirements.txt
