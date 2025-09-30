@@ -280,7 +280,7 @@ export default function Viewer() {
 
 ---
 -----------------------------
-# Finally
+# Finally follow the below structure and code.
 ---
 
 # 📂 Repo Structure (GitHub Ready)
