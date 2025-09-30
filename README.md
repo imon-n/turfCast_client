@@ -1,8 +1,17 @@
 
-# TurfCast - BestFrame AI 
+# TurfCast BD
 
-Multi-camera **AI-powered best frame detection** system.  
-It detects **sports ball** from multiple video feeds → selects the **best camera view** → streams it to users in real time.
+TurfCast is an **AI-powered multi-camera sports streaming system**. It automatically detects the ball, picks the **best viewing angle**, and streams it live to audiences.  
+Extra features include **highlight generation, recorded match playback, live streaming (YouTube/Facebook), and slot booking for turf management**.  
+
+---
+
+## 📌 Features
+- 🔴 **Live Streaming (Facebook / YouTube)**
+- 🎯 **Best Frame Highlight** 
+- 📹 **Recorded Match Playback** 
+- 📅 **Slot Booking System** → (online scheduling + payment)
+- 🌐 **Cross-Platform Access** → Web app (React frontend) + scalable Node.js backend।  
 
 ---
 ## 📂 Project Structure
@@ -86,15 +95,8 @@ Cameras/Videos → AI (YOLOv8) → Best Frame → Node.js Server → React Clien
 
 * [ ] WebRTC integration for smooth streaming
 * [ ] Cloud GPU deployment
-* [ ] Booking system + analytics
+* [ ] Analytics Dashboard
 
-## 📌 Features
 
-- 🎯 **Best Frame Highlight** → Multi-camera feed থেকে AI (YOLOv8) দিয়ে sports ball detect করে সবচেয়ে ভালো camera view বেছে নেয়।  
-- 📹 **Recorded Match Playback** → Past matches থেকে best-moment highlights তৈরি করা যাবে।  
-- 🔴 **Live Streaming Integration** → Facebook / YouTube / RTMP/WebRTC এ সরাসরি stream push করা যাবে।  
-- 📅 **Slot Booking System** → Users মাঠ/কোর্ট বুক করতে পারবে (online scheduling + payment)।  
-- 📊 **Analytics Dashboard** → Ball tracking, player activity, এবং match insights report।  
-- 🌐 **Cross-Platform Access** → Web app (React frontend) + scalable Node.js backend।  
 
 
