@@ -1,5 +1,7 @@
 
-# 📌 (`turf-bestframe-ai/README.md`)
+---
+
+# 📌 Root README.md (`turf-bestframe-ai/README.md`)
 
 ```markdown
 # 🏟️ TurfCast - BestFrame AI
@@ -261,3 +263,12 @@ export default function BestFrameViewer() {
 ```
 
 ---
+
+```
+
+---
+
+✅ সবগুলো এখন proper markdown format এ clean + GitHub-friendly.  
+
+চাও তুমি চাইলে আমি এগুলোর সাথে **Badges (build, Python, Node, React)** আর **screenshots/gif preview section** যোগ করে আরও প্রফেশনাল GitHub profile-ready বানিয়ে দিতে পারি। চাই?
+```
