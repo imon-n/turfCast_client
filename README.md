@@ -1,13 +1,28 @@
+Got it ✅
+তুমি চাইছো আমি পুরোটা আবার লিখি কিন্তু এবার **GitHub README best practices** মেনে — অর্থাৎ
+
+* একদম পরিষ্কার structure
+* proper markdown heading hierarchy (`#`, `##`, `###`)
+* fenced code blocks ঠিকমতো
+* কোন open fence যেন unmatched না থাকে
+* সুন্দরভাবে সাজানো (badges/tech stack/icons optional but readable)
+
+আমি তোমাকে root + submodules (ai-service, backend, frontend) এর জন্য final **GitHub standard style README.md** লিখে দিলাম।
+
+---
+
+# 📌 Root README.md (`turf-bestframe-ai/README.md`)
 
 ```markdown
-# TurfCast - BestFrame AI
+# 🏟️ TurfCast - BestFrame AI
 
 Multi-camera **AI-powered best frame detection** system.  
-Detects **sports ball** from multiple video feeds → picks the **best camera view** → streams it to users in real time.
+It detects **sports ball** from multiple video feeds → selects the **best camera view** → streams it to users in real time.
 
 ---
 
 ## 📂 Project Structure
+
 ```
 
 turf-bestframe-ai/
@@ -62,10 +77,15 @@ node server.js
 ```bash
 cd frontend
 npm install
-npm run dev   # or npm start
+npm run dev   # (Vite) 
+# or 
+npm start     # (CRA)
 ```
 
-Then open [http://localhost:5173](http://localhost:5173) (Vite) or [http://localhost:3000](http://localhost:3000) (CRA).
+Then open:
+
+* [http://localhost:5173](http://localhost:5173) (Vite)
+* [http://localhost:3000](http://localhost:3000) (CRA)
 
 ---
 
@@ -79,9 +99,9 @@ Cameras/Video → Python AI (YOLOv8) → Best Frame → Node.js Server → React
 
 ## 🛠️ Tech Stack
 
-* **AI Service**: Python, OpenCV, Ultralytics YOLOv8, Socket.IO client
-* **Backend**: Node.js, Express, Socket.IO
-* **Frontend**: React, Socket.IO client
+* **AI Service** → Python, OpenCV, Ultralytics YOLOv8, Socket.IO client
+* **Backend** → Node.js, Express, Socket.IO
+* **Frontend** → React, Socket.IO client
 
 ---
 
@@ -93,11 +113,14 @@ Cameras/Video → Python AI (YOLOv8) → Best Frame → Node.js Server → React
 
 ---
 
+👨‍💻 Developed with ❤️ by **Tanif & Team**
+
 ````
 
 ---
 
-## 📌 AI Service README.md (`ai-service/README.md`)
+# 📌 AI Service README.md (`ai-service/README.md`)
+
 ```markdown
 # 🤖 AI Service (YOLOv8 + OpenCV)
 
@@ -107,6 +130,7 @@ The best frame is sent to the Node.js backend via **Socket.IO client**.
 ---
 
 ## ⚙️ Setup
+
 ```bash
 cd ai-service
 python -m venv venv
@@ -148,7 +172,8 @@ python main.py
 
 ---
 
-## 📌 Backend README.md (`backend/README.md`)
+# 📌 Backend README.md (`backend/README.md`)
+
 ```markdown
 # 🌐 Backend (Node.js + Socket.IO)
 
@@ -157,6 +182,7 @@ Handles real-time communication between **Python AI Service** and **React fronte
 ---
 
 ## ⚙️ Setup
+
 ```bash
 cd backend
 npm install
@@ -192,7 +218,8 @@ Server runs at: [http://localhost:5000](http://localhost:5000)
 
 ---
 
-## 📌 Frontend README.md (`frontend/README.md`)
+# 📌 Frontend README.md (`frontend/README.md`)
+
 ```markdown
 # 💻 Frontend (React Client)
 
@@ -201,6 +228,7 @@ React app that subscribes to **Socket.IO server** and displays the **best frame*
 ---
 
 ## ⚙️ Setup
+
 ```bash
 cd frontend
 npm install
@@ -249,3 +277,8 @@ export default function BestFrameViewer() {
 ```
 
 ---
+
+✅ সবগুলো এখন proper markdown format এ clean + GitHub-friendly.  
+
+চাও তুমি চাইলে আমি এগুলোর সাথে **Badges (build, Python, Node, React)** আর **screenshots/gif preview section** যোগ করে আরও প্রফেশনাল GitHub profile-ready বানিয়ে দিতে পারি। চাই?
+```
