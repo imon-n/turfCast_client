@@ -1,5 +1,5 @@
 
-```
+```markdown
 # TurfCast - BestFrame AI
 
 Multi-camera **AI-powered best frame detection** system.  
